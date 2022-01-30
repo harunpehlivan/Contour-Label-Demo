@@ -27,11 +27,8 @@ fig1, ax1 = plt.subplots()
 # Basic contour plot
 CS1 = ax1.contour(X, Y, Z)
 
-fmt = {}
 strs = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
-for l, s in zip(CS1.levels, strs):
-    fmt[l] = s
-
+fmt = dict(zip(CS1.levels, strs))
 # Label every other level using strings
 ax1.clabel(CS1, CS1.levels[::2], inline=True, fmt=fmt, fontsize=10)
 fig2, ax2 = plt.subplots()
